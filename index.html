@@ -1,276 +1,229 @@
-<!DOCTYPE html>
-<html lang="id">
+<!doctype html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Harriman Saragih · Portfolio Akademik</title>
-  <meta name="description" content="Portofolio eksekutif, pengajaran universitas, riset, dan layanan akademik Dr. Harriman Saragih." />
-  assets/favicon.ico
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Harriman Saragih</title>
+
   <style>
     :root{
-      --bg:#0f172a; --surface:#111827; --border:#1f2937;
-      --text:#e5e7eb; --muted:#9ca3af; --accent:#22c55e; --link:#38bdf8;
-      --maxw:920px;
+      --bg:#ffffff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --link:#2563eb;
+      --border:#e5e7eb;
+      --card:#f9fafb;
+      --max:1050px;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
-    a{color:var(--link);text-decoration:none}
-    a:hover{text-decoration:underline}
-    img{max-width:100%;height:auto;border-radius:8px}
-    .wrapper{max-width:var(--maxw);margin:0 auto;padding:24px}
-    header{display:flex;align-items:center;gap:18px;padding:20px 0;border-bottom:1px solid var(--border)}
-    .avatar{width:84px;height:84px;border-radius:50%;object-fit:cover;border:2px solid var(--border);background:#0b1220}
-    .title h1{margin:0;font-size:1.8rem;line-height:1.2}
-    .title p{margin:6px 0 0;color:var(--muted)}
-    nav.primary{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
-    .pill{padding:6px 12px;border:1px solid var(--border);border-radius:999px;color:var(--text)}
-    .pill:hover{border-color:var(--link)}
-    .lang-toggle{margin-left:auto;display:flex;gap:8px}
-    .lang-btn{padding:6px 10px;border:1px solid var(--border);border-radius:6px;background:transparent;color:var(--text);cursor:pointer}
-    .lang-btn.active{border-color:var(--link)}
-    main{padding:24px 0;display:grid;grid-template-columns:1fr;gap:24px}
-    .card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px}
-    .card h2{margin-top:0;font-size:1.25rem}
-    .grid-2{display:grid;grid-template-columns:1fr;gap:18px}
-    .badge{display:inline-block;padding:4px 8px;border-radius:6px;background:#0b3a2b;color:#a7f3d0;border:1px solid #14532d}
-    footer{border-top:1px solid var(--border);padding:18px 0;color:var(--muted);font-size:.95rem}
-    details{border:1px dashed var(--border);border-radius:8px;padding:10px;background:#0e1526}
-    details>summary{cursor:pointer;color:var(--link);font-weight:600}
-    @media(min-width:900px){
-      main{grid-template-columns:2fr 1fr}
-      .grid-2{grid-template-columns:1fr 1fr}
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+
+    a{ color:var(--link); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 18px 48px;
+    }
+
+    .layout{
+      display:grid;
+      grid-template-columns: 260px 1fr;
+      gap: 28px;
+      align-items:start;
+    }
+
+    /* Sidebar */
+    .sidebar{
+      position: sticky;
+      top: 18px;
+      border-right: 1px solid var(--border);
+      padding-right: 18px;
+    }
+
+    .profile{
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .avatar{
+      width: 140px;
+      height: 140px;
+      border-radius: 999px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      display:grid;
+      place-items:center;
+      color: var(--muted);
+      font-size: 12px;
+      overflow:hidden;
+    }
+
+    .name{
+      font-size: 26px;
+      font-weight: 750;
+      margin: 0;
+    }
+
+    .role{
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    nav ul{
+      list-style:none;
+      padding:0;
+      margin: 16px 0 0;
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+    }
+
+    nav a{
+      display:block;
+      padding: 8px 10px;
+      border-radius: 10px;
+    }
+
+    nav a[aria-current="page"]{
+      background: var(--card);
+      border: 1px solid var(--border);
+      text-decoration:none;
+      font-weight: 650;
+    }
+
+    /* Main content */
+    main{ padding-left: 2px; }
+
+    section{
+      padding: 6px 0 22px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 22px;
+    }
+
+    section:last-child{
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    .section-title{
+      font-size: 22px;
+      font-weight: 750;
+      margin: 0 0 10px;
+    }
+
+    .placeholder{
+      min-height: 140px;
+      border: 1px dashed var(--border);
+      border-radius: 14px;
+      background: #fff;
+      padding: 14px;
+      color: var(--muted);
+      display:flex;
+      align-items:center;
+    }
+
+    /* Responsive */
+    @media (max-width: 860px){
+      .layout{ grid-template-columns: 1fr; }
+      .sidebar{
+        position: static;
+        border-right: none;
+        padding-right: 0;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 18px;
+      }
+      nav ul{
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      nav a{ border: 1px solid var(--border); }
+      main{ padding-left: 0; }
     }
   </style>
 </head>
+
 <body>
-  <div class="wrapper">
-    <!-- ====== HEADER ====== -->
-    <header>
-      assets/profile.jpg
-      <div class="title">
-        <h1>Dr. Harriman Samuel Saragih</h1>
-        <p>Assistant Professor · Master of Business Innovation · Monash University Indonesia</p>
-        <nav class="primary" aria-label="Navigasi utama">
-          #exec-edExecutive Education</a>
-          #uni-teachingUniversity Teaching</a>
-          #researchResearch</a>
-          #academic-servicesAcademic Services</a>
+  <div class="wrap">
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="profile">
+          <div class="avatar" aria-label="Profile photo placeholder">
+            Profile photo
+          </div>
+
+          <h1 class="name">Harriman Saragih</h1>
+          <p class="role">Assistant Professor (Lecturer) of Business &amp; Economics</p>
+        </div>
+
+        <nav aria-label="Primary">
+          <ul>
+            <li><a href="#home" aria-current="page">Home</a></li>
+            <li><a href="#executive-education">Executive Education</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#resume">Resume</a></li>
+          </ul>
         </nav>
-      </div>
-      <div class="lang-toggle" aria-label="Pengaturan bahasa">
-        <button class="lang-btn active" data-lang="id">ID</button>
-        <button class="lang-btn" data-lang="en">EN</button>
-      </div>
-    </header>
+      </aside>
 
-    <!-- ====== SUMMARY (ID + EN) ====== -->
-    <section class="card">
-      <h2>Ringkasan</h2>
-
-      <!-- Indonesian -->
-      <div class="lang lang-id">
-        <p>
-          Dr. Harriman Saragih adalah Fellow of the Higher Education Academy (UK) yang saat ini bertugas di program Master of Business Innovation, Monash University Indonesia.
-          Penguatan keterlibatan industri mendorong nominasi pada Vice-Chancellor’s Award for Teaching Excellence (Monash Australia) dan Dean’s Award untuk Industry & Community Education (Monash Business School).
-        </p>
-        <p>
-          Sebagai Fulbright Scholar di Cornell University (AS), beliau memperdalam pedagogi dan eksekutif education termasuk spesialisasi Applied Data Science (Columbia University).
-          Dampak dalam integrasi generative AI pada pendidikan tinggi diakui sebagai finalis Generative AI × Assessment (Monash TransformEd, Malaysia).
-        </p>
-        <p>
-          Kompetensi problem-solving ditopang oleh sertifikasi IBM (Design Thinking Practitioner).
-          Pengalaman industri mencakup Training Analyst di CNOOC; kepemimpinan eksekutif education di Prasetiya Mulya (Kepala Executive MBA; Associate Consultant, Executive Learning Institute).
-          Beliau juga melatih tim Indonesia menjadi finalis HSBC/HKU Business Case Competition.
-        </p>
-        <p>
-          Kolaborasi global mencakup AIBC, Alliance for Digital Health, School of Pharmacy, dan Monash Business School; afiliasi dengan Monash Data Futures Institute.
-          Minat riset berada pada B2B marketing dan services inclusion, dengan publikasi A*/A (EJM, JSM, JBIM) serta metodologi beragam termasuk SEM, machine learning, dan NLP.
-        </p>
-        <p><span class="badge">Pembaruan:</span> 9 Desember 2025 · Email: mailto:harriman.saragih@monash.eduharriman.saragih@monash.edu</a> · Web: https://www.monash.edu/indonesiamonash.edu/indonesia</a></p>
-      </div>
-
-      <!-- English -->
-      <div class="lang lang-en" style="display:none" lang="en">
-        <p>
-          Dr. Harriman Saragih is a Fellow of the Higher Education Academy (UK) serving in the Master of Business Innovation program at Monash University, Indonesia.
-          His excellence in industry engagement led to a nomination for the Vice-Chancellor’s Award for Teaching Excellence (Monash Australia) and the Dean’s Award for Industry and Community Education (Monash Business School).
-        </p>
-        <p>
-          A Fulbright Scholar at Cornell University (US), he advanced pedagogical and executive education expertise, including a specialization in Applied Data Science from Columbia University.
-          He was a finalist in the Generative AI × Assessment category at Monash TransformEd (Malaysia), evidencing impact in integrating generative AI into higher education.
-        </p>
-        <p>
-          His innovative problem-solving is supported by IBM certifications (Design Thinking Practitioner).
-          Prior roles include Training Analyst at CNOOC; leadership in executive education at Prasetiya Mulya (Head of Executive MBA; Associate Consultant, Executive Learning Institute), and coaching Indonesia’s team to the finals of the HSBC/HKU Business Case Competition.
-        </p>
-        <p>
-          Partnerships span AIBC, Alliance for Digital Health, Monash School of Pharmacy, and Monash Business School; he is affiliated with the Monash Data Futures Institute.
-          Research interests include B2B marketing and services inclusion with A*/A publications (EJM, JSM, JBIM) using diverse methods such as SEM, machine learning, and NLP.
-        </p>
-      </div>
-    </section>
-
-    <!-- ====== GRID COLUMN LAYOUT ====== -->
-    <main>
-      <div class="grid-2">
-        <!-- ================= EXECUTIVE EDUCATION ================= -->
-        <section id="exec-ed" class="card">
-          <h2>Executive Education Portfolio</h2>
-          <p>
-            Fokus pada program pengembangan eksekutif untuk manajer hingga C-level, berorientasi pada inovasi bisnis, pemasaran, dan desain berpikir.
-            Portofolio > US$250,000 dengan klien privat dan pemerintahan.
-          </p>
-          <h3>Kurikulum & Peserta</h3>
-          <ul>
-            <li>Topik: prinsip pemasaran, inovasi kewirausahaan, design thinking for business, creativity for change.</li>
-            <li>Peserta: profesional dengan 8–10 tahun pengalaman; middle–senior management.</li>
-            <li>Perusahaan (seleksi): Bank Mandiri, PLN, Kalbe, Pupuk Indonesia, HSBC, Microsoft, Deloitte, PwC, Sinar Mas, BRIN, Maersk, Telkom, BRI, Astra, Nestlé, BTN, BSI, AXA Mandiri.</li>
-          </ul>
-          <h3>Kolaborasi & Keterlibatan</h3>
-          <ul>
-            <li>Kemitraan: Australia Indonesia Business Council, Alliance for Digital Health, Monash School of Pharmacy, Monash Business School.</li>
-            <li>Coaching & Kompetisi: HSBC/HKU Business Case Competition (finalis), Gadjah Mada Business Case Competition (coach, 2024).</li>
-          </ul>
-          <h3>Undangan & Pelatihan</h3>
-          <p>Institusi/agenda (seleksi): Monash Malaysia, Cornell University, Fulbright AMINEF, Kalbe Farma, SEA Today News, Kemenkeu (LPDP), Traveloka–Monash Mitra, Sinarmas Mekari, dsb.</p>
-          <h3>Penghargaan & Sertifikasi</h3>
-          <ul>
-            <li>Nominasi Vice-Chancellor’s Teaching Excellence (Monash Australia); Dean’s Award (Monash Business School).</li>
-            <li>Finalis TransformEd Generative AI × Assessment (Monash Malaysia).</li>
-            <li>Applied Data Science (Columbia); IBM Data Science Practitioner; IBM Design Thinking Practitioner; Enterprise Design Thinking Essentials for AI.</li>
-          </ul>
+      <main>
+        <section id="home">
+          <h2 class="section-title">Home</h2>
+          <div class="placeholder">[Content intentionally left blank]</div>
         </section>
 
-        <!-- ================= UNIVERSITY TEACHING ================= -->
-        <section id="uni-teaching" class="card">
-          <h2>University Teaching</h2>
-          <p>
-            Assistant Professor & Course Coordinator, Master of Business Innovation, Monash University Indonesia.
-            Filosofi pedagogi: diskursus kolaboratif, argumentasi terstruktur, partisipasi aktif.
-          </p>
-          <h3>Prinsip Pedagogi</h3>
-          <ul>
-            <li>Memfasilitasi dialog setara untuk mengasah argumen lisan dan tulisan.</li>
-            <li>Aktif lebih bernilai daripada observasi pasif; fleksibel terhadap dinamika kelas.</li>
-            <li>Berbasis rasa hormat dan dukungan pada tujuan unik setiap mahasiswa.</li>
-          </ul>
-          <h3>Bahasa</h3>
-          <p>Indonesia (native), Inggris (intermediate), Bisindo Level 1 (Pusbisindo), Sunda (beginner).</p>
-          <h3>Tugas Administratif (seleksi)</h3>
-          <ul>
-            <li>Faculty Education Committee (2026–kini); Course Coordinator MBI (2021–2023, 2026–kini).</li>
-            <li>Monash Indonesia Research Office (2025); Seed Grant Committee (2025); PITCH PhD Interdisciplinary Challenge (2025).</li>
-            <li>Hybrid Working Group (2023); Community Engagement (2024).</li>
-            <li>Prasetiya Mulya: Program Manager (Branding; Business & Strategic Management) dan AACSB/Internal Audit Committee.</li>
-          </ul>
-        </section>
-      </div>
-
-      <div>
-        <!-- ================= RESEARCH ================= -->
-        <section id="research" class="card">
-          <h2>Research</h2>
-          <p>
-            Minat: services inclusion, B2B marketing, dan metode kualitatif; dengan pendekatan SEM, machine learning, dan NLP.
-            Publikasi pada jurnal A*/A (EJM, JSM, JBIM) dan outlet terkait.
-          </p>
-          <h3>Daftar Publikasi (seleksi & lengkap)</h3>
-          <details>
-            <summary>Lihat semua publikasi</summary>
-            <ul>
-              <li>Relational Pathways to Inclusion: Transforming Service Systems through Macro-Social Marketing. <em>Journal of Service Research</em>, 2026 (Q1, A*).</li>
-              <li>“Beyond Our Bubble”: Bridging Marketing Classrooms and Communities Experiencing Vulnerabilities. <em>European Journal of Marketing</em>, 2026 (Q1, A*). doi:10.1108/EJM-12-2024-1023</li>
-              <li>Service Presentness in Enhancing Service Interaction Flow. <em>Marketing Intelligence & Planning</em>, 2025 (Q2, A). doi:10.1108/MIP-04-2024-0267</li>
-              <li>Exploring the Principle and Competencies for Phygital Service Inclusion. <em>Journal of Services Marketing</em>, 2025 (Q1, A). doi:10.1108/JSM-04-2024-0159</li>
-              <li>Ambicultural Sensitivity and Resource Dynamism in B2B Relationship. <em>Journal of Business & Industrial Marketing</em>, 2025 (Q1, A). doi:10.1108/JBIM-05-2024-0318</li>
-              <li>Service Leniency: A Dual Logics Perspective. <em>Marketing Intelligence & Planning</em>, 2025 (Q2, A). doi:10.1108/MIP-04-2024-0275</li>
-              <li>Beyond the Transaction… <em>Journal of Business & Industrial Marketing</em>, 2024 (Q1, A). doi:10.1108/JBIM-04-2023-0201</li>
-              <li>Genuine Small Talk, Rapport, and Negotiation Outcomes in B2B Relationships. <em>JBIM</em>, 2024 (Q1, A). doi:10.1108/JBIM-03-2024-0182</li>
-              <li>Service Language and Small Talk… <em>Journal of Service Theory & Practice</em>, 2024 (Q1, A). doi:10.1108/JSTP-03-2024-0084</li>
-              <li>Ambicultural Sensitivity and Relational Embeddedness… <em>JBIM</em>, 2024 (Q1, A). doi:10.1108/JBIM-09-2023-0499</li>
-              <li>Brand awareness and relationship intention… <em>APJML</em>, 2023 (Q1, A). doi:10.1108/APJML-10-2022-0834</li>
-              <li>Critical success factors of recording studio in Indonesia. <em>APJML</em>, 2017 (Q1, A). doi:10.1108/APJML-07-2016-0123</li>
-              <li>Exploring topics and trends in service robots… In <em>Emerging Technologies in Business</em>, Springer, 2024. doi:10.1007/978-981-97-2211-2_11</li>
-              <li>Genuine Small Talk in Hospitality Services Encounter. <em>CBTH</em>, 2024 (Q1, B). doi:10.1108/CBTH-09-2023-0164</li>
-              <li>Navigating the postpandemic theme park experience… <em>CBTH</em>, 2023 (Q1, B). doi:10.1108/CBTH-06-2023-0067</li>
-              <li>Mining and exploring eWOM from Twitter… <em>JHTT</em>, 2021 (Q1, B). doi:10.1108/JHTT-03-2020-0067</li>
-              <li>Predicting song popularity… <em>Journal of Management Analytics</em>, 2023 (Q1, C). doi:10.1080/23270012.2023.2239824</li>
-              <li>Views of Indonesian consumer towards medical tourism in Malaysia. <em>JABS</em>, 2019 (Q1, C). doi:10.1108/JABS-04-2018-0135</li>
-              <li>Co-creation experiences in the music business… <em>JMD</em>, 2019 (Q1, C). doi:10.1108/JMD-11-2018-0339</li>
-              <li>Factors predicting pro-environmental behavior… <em>JSOCM</em>, 2023 (Q2, B). doi:10.1108/JSOCM-03-2022-0062</li>
-              <li>Segmentation of music festival visitors… <em>IJEFM</em>, 2020 (Q2, B). doi:10.1108/IJEFM-03-2020-0016</li>
-              <li>From co-discovery to co-capture… <em>IJIS</em>, 2019 (Q1). doi:10.1108/IJIS-07-2019-0068</li>
-              <li>Multi-actor innovation in the music industry… <em>IJIS</em>, 2018 (Q1). doi:10.1108/IJIS-07-2017-0065</li>
-              <li>GMF Aero Asia: Aiming for the Middle-East base. <em>EEMCS</em>, 2019 (Q4). doi:10.1108/EEMCS-12-2018-0257</li>
-              <li>Co-innovation: A review and conceptual framework. <em>IJBIR</em>, 2018 (Q3). doi:10.1504/ijbir.2018.095542</li>
-              <li>Co-innovation processes in the music business. <em>Heliyon</em>, 2019 (Q1). doi:10.1016/j.heliyon.2019.e01540</li>
-              <li>Green Consumption… <em>Journal of Responsible Production and Consumption</em>, 2024. doi:10.1108/JRPC-10-2023-0008</li>
-            </ul>
-          </details>
-          <h3>Afiliasi & Kredensial</h3>
-          <ul>
-            <li>Fellow, Advance HE (UK); Fulbright Scholar, Cornell University.</li>
-            <li>Monash Data Futures Institute (afiliasi).</li>
-          </ul>
+        <section id="executive-education">
+          <h2 class="section-title">Executive Education</h2>
+          <div class="placeholder">[Content intentionally left blank]</div>
         </section>
 
-        <!-- ================= ACADEMIC SERVICES ================= -->
-        <section id="academic-services" class="card">
-          <h2>Academic Services</h2>
-          <p>
-            Layanan akademik mencakup kepanitiaan fakultas, penilaian hibah/riset, dan kontribusi profesi melalui editorial serta review jurnal.
-          </p>
-          <h3>Editorial & Review</h3>
-          <ul>
-            <li>A-ranked: <em>Journal of Business Research</em>, <em>APJML</em>, <em>MIP</em>, <em>IJCHM</em>, <em>JBIM</em>, <em>AMJ</em>, <em>JSM</em>.</li>
-            <li>Others: <em>JHTT</em>, <em>IJEFM</em>, <em>IJEM</em>, <em>MRR</em>, <em>IJIS</em>, <em>JRME</em>, <em>JMD</em>, <em>Arts and the Market</em>, <em>APBR</em>.</li>
-          </ul>
-          <h3>Panel & Komunitas</h3>
-          <ul>
-            <li>Australia Awards Indonesia (Academic Panel, 2024).</li>
-            <li>Media & Mentions: The Conversation, The Jakarta Post/Globe, Tempo, Vice, Detik, Pikiran Rakyat, dsb.</li>
-          </ul>
-          <h3>Pengabdian</h3>
-          <ul>
-            <li>Pianis untuk layanan Minggu anak berkebutuhan khusus (2025–kini); tim musik gereja (1999–2015).</li>
-          </ul>
+        <section id="research">
+          <h2 class="section-title">Research</h2>
+          <div class="placeholder">[Content intentionally left blank]</div>
         </section>
-      </div>
-    </main>
 
-    <!-- ====== FOOTER ====== -->
-    <footer>
-      © <span id="y"></span> Harriman Saragih · Dibangun dengan GitHub Pages ·
-      assets/cv.pdfCurriculum Vitae</a>
-    </footer>
+        <section id="resume">
+          <h2 class="section-title">Resume</h2>
+          <div class="placeholder">[Content intentionally left blank]</div>
+        </section>
+      </main>
+    </div>
   </div>
 
   <script>
-    // Tahun dinamis
-    document.getElementById('y').textContent = new Date().getFullYear();
+    // Optional: highlight active nav item while scrolling
+    const links = Array.from(document.querySelectorAll('nav a'));
+    const sections = links
+      .map(a => document.querySelector(a.getAttribute('href')))
+      .filter(Boolean);
 
-    // Toggle bahasa sederhana (tanpa framework)
-    const buttons = document.querySelectorAll('.lang-btn');
-    const idBlocks = document.querySelectorAll('.lang-id');
-    const enBlocks = document.querySelectorAll('.lang-en');
-    buttons.forEach(btn=>{
-      btn.addEventListener('click',()=>{
-        buttons.forEach(b=>b.classList.remove('active'));
-        btn.classList.add('active');
-        const lang = btn.dataset.lang;
-        if(lang==='id'){
-          idBlocks.forEach(el=>el.style.display='block');
-          enBlocks.forEach(el=>el.style.display='none');
-          document.documentElement.setAttribute('lang','id');
-        } else {
-          idBlocks.forEach(el=>el.style.display='none');
-          enBlocks.forEach(el=>el.style.display='block');
-          document.documentElement.setAttribute('lang','en');
-        }
-      });
-    });
+    const setActive = (id) => {
+      links.forEach(a => a.removeAttribute('aria-current'));
+      const active = links.find(a => a.getAttribute('href') === '#' + id);
+      if (active) active.setAttribute('aria-current','page');
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter(e => e.isIntersecting)
+        .sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (visible) setActive(visible.target.id);
+    }, { rootMargin: '-20% 0px -65% 0px', threshold: [0.1, 0.25, 0.5] });
+
+    sections.forEach(s => observer.observe(s));
   </script>
 </body>
 </html>
-``
